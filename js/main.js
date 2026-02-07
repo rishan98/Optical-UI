@@ -277,6 +277,18 @@
         $('.js-modal1').removeClass('show-modal1');
     });
 
-
+    /*==================================================================
+    [ Product color swatch - change image on color click ]*/
+    $('.product-color-item').on('click', function(e){
+        e.preventDefault();
+        var $this = $(this);
+        var imgSrc = $this.data('img');
+        if (imgSrc) {
+            var $block2 = $this.closest('.block2');
+            $block2.find('.block2-pic img').attr('src', imgSrc);
+            $block2.find('.product-color-item').removeClass('active');
+            $this.addClass('active');
+        }
+    });
 
 })(jQuery);
