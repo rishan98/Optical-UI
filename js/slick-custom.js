@@ -138,6 +138,29 @@
           var nameTab = $(e.target).attr('href'); 
           $(nameTab).find('.slick2').slick('reinit');          
         });      
+
+        /*==================================================================
+        [ Slick Brands - 4-5 items visible, scroll 1 at a time, slow animation ]*/
+        $('.wrap-slick-brands').each(function(){
+            $(this).find('.slick-brands').slick({
+                slidesToShow: 5,
+                slidesToScroll: 1,
+                speed: 800,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 3500,
+                arrows: true,
+                appendArrows: $(this),
+                prevArrow:'<button class="arrow-slick-brands prev-slick-brands" type="button"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
+                nextArrow:'<button class="arrow-slick-brands next-slick-brands" type="button"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
+                responsive: [
+                    { breakpoint: 1200, settings: { slidesToShow: 5, slidesToScroll: 1 } },
+                    { breakpoint: 992, settings: { slidesToShow: 4, slidesToScroll: 1 } },
+                    { breakpoint: 768, settings: { slidesToShow: 3, slidesToScroll: 1 } },
+                    { breakpoint: 576, settings: { slidesToShow: 2, slidesToScroll: 1 } }
+                ]
+            });
+        });
         
         /*==================================================================
         [ Slick3 ]*/
